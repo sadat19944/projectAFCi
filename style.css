@@ -1,0 +1,500 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,800;1,600&display=swap');
+:root{
+    --main-color:#8e44ad;
+    --black:#222;
+    --white:#fff;
+    --light-black:#777;
+    --light-white:#fff9;
+    --dark-bg: #5ed;
+}
+*{
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    text-transform: capitalize;
+}
+.header{
+    position: sticky;
+    top: 0; left: 0; right: 0;
+    background-color: rgb(147, 225, 245);
+    display: flex;
+    padding: 2rem;
+    padding-bottom: 2rem;
+    box-shadow: var(--light-black);
+    align-items: center;
+    z-index: 1000;
+    justify-content: space-between;
+}
+.header .logo{
+    font-size: 1.5rem;
+    color: var(--black);
+}
+.header .fa-solid{
+    font-size: 3rem;
+    margin: 8px;
+    color: gray;
+}
+.header .navbar{
+    min-width: 15rem;
+}
+.header .navbar * {
+    box-sizing: border-box;
+}
+.select{
+    background: #2a2f3b;
+    color: #fff;
+    /* text-align: center; */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    border: 2px #2a2f3b;
+    border-radius: 0.5rem;
+    padding: 0.5em;
+    cursor: pointer;
+    /* transition: background 0.3s; */
+}
+.select:hover{
+    background: gray;
+}
+.select-clicked{
+    border: 2px red solid;
+    box-shadow: 0 0 0.8em;
+    background-color: red;
+}
+
+/* practice */
+ 
+.link{
+    color: red;
+    cursor: pointer;
+    padding: 0;
+}
+.link:hover{
+    background: black;
+}
+.dropdown{
+    position: relative;
+}
+.dropdownMenu{
+    position: absolute;
+    left: 0;
+    top: calc(100% + .25rem);
+    /* border: 2px solid; */
+    background-color: antiquewhite;
+    opacity: 0;
+    /* transform: translateY(-10px);
+    transition: opacity 150ms  ease-in-out, transform 150ms ease-in-out; */
+}
+.dropdown.active-drop > .link + .dropdownMenu{
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+    border: 2px solid red;
+}
+/* practice */
+
+.caret{
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 6px solid #fff;
+    transition: 0.3s;
+}
+.caret-rotate{
+    transform: rotate(180deg);
+}
+.menu{
+    list-style: none;
+    padding: 0.2em 0.5em;
+    background: #323741;
+    border: 1px var(--light-black) solid;
+    box-shadow: 0 0.5 1em rgba(0 , 0 , 0 , 0.2);
+    border-radius: 0.5em;
+    color: #fff;
+    position: absolute;
+    min-width: 15rem;
+    opacity: 0;
+    display: none;
+    z-index: 1;
+    transition: 0.2s;
+}
+
+
+.menu li{
+    padding: 0.7em 0.5em;
+    margin: 0.3em 0;
+    border-radius: 0.5em;
+    cursor: pointer;
+}
+.menu li:hover{
+    background: var(--light-black);
+}
+/* Active styles added javascropt */
+.active{
+    background-color: #26489a;
+}
+/*  added javascropt */
+.menu-open{
+    display: block;
+    opacity: 1;
+}
+
+
+
+.header .navbar a{
+    margin: 10px;
+    color: var(--main-color);
+    transition: 0.5s all ease;
+}
+.header .navbar a:hover{
+    color: var(--black);
+   /* border: 1px solid var(--white); */
+}
+
+#menu-btn{
+    font-size: 2.5rem;
+    cursor: pointer;
+    color: var(--black);
+    display: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* Responsive part  */
+
+
+
+
+
+
+
+
+
+
+
+@media (max-width:1000px){
+
+    section{
+        padding: 3rem 5%;
+    }
+}
+
+@media (max-width:991px){
+    html{
+        font-size: 55%;
+    }
+    section{
+        padding: 3rem 2rem;
+    }
+}
+
+@media (max-width:768px){
+    #menu-btn{
+        display: inline-block;
+        transition: .2s linear;
+    }
+    #menu-btn.fa-times{
+        transform: rotate(180deg);
+    }
+    .header .navbar{
+        position: absolute;
+        top: 99%; left: 0; right: 0;
+        background-color: var(--dark-bg);
+        border-top: var(--dark-bg);
+        padding: 18rem;
+        text-align: center;
+        clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+        transition: 0.5s all ease;
+    }
+    .header .navbar a:hover{
+        background-color: rgb(42, 172, 144);
+    }
+    
+    .header .navbar.active{
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    } 
+    .header .navbar ul li{
+        display: block;
+    }
+}
+
+@media (max-width:450px){
+
+    section{
+        padding: 3rem 5%;
+    }
+}
+
+
+
+
+
+/* container  ---- card part-----*/
+
+
+
+.container{
+    height: 100vh;
+    background: lightcoral;
+    text-align: center;
+    text-align: center;
+    
+}
+.cards{
+    height: 100vh;
+    /* margin-top: 50px ; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+}
+@media (max-width:768px){
+    .cards{
+        display: inline-block; 
+    }
+    .cards .card{
+        width: 20rem;
+        height: 25rem;
+        margin: 10px;
+    }
+    .container{
+        max-height: 100vh;
+    }
+}
+.card{
+    border: 2px solid white;
+    border-radius: 10px;
+    width: 20rem;
+    height: 25rem;
+    background: rgb(231, 198, 231);
+    
+}
+.card p{
+    text-align: justify;
+    margin: 4px;
+}
+.card .mainPic{
+    min-width: 100%;
+    height: 50%;
+    background: darkcyan;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    cursor: pointer;
+}
+.mainPic img{
+    width: 70%;
+    height: 95%;
+    border-radius: 10px;
+    
+}
+
+
+
+/* third part */
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: translateY(10%);
+}
+.carousel {
+    width: 80vw;
+    /* height: 80vh; */
+    aspect-ratio: 19/9;
+    position: relative;
+    /* border: 2px solid red; */
+    background: lightcoral;
+    
+    
+}
+.carousel > ul{
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.slide{
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    text-align: center;
+    margin: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.slide > img {
+    display: block;
+   border-radius: 20px;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+@media (max-width:810px){
+    .slide{
+        position: absolute;
+        align-items: center;
+        margin: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        /* aspect-ratio: 16/9; */
+        height: 100%;
+        /* border: 2px solid red; */
+
+    }
+    .carousel{
+        min-height: 60vh;
+        /* border: 2px solid red; */
+    }
+    .slide > img{
+        width: 100%;
+        max-height: 60%;
+        object-fit: cover;
+        object-position: center;
+        /* margin-top: 35%; */
+    }
+}
+@media (min-width:412px){
+    .slide{
+        position: absolute;
+        align-items: center;
+        margin: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+
+    }
+    .slide > img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+        /* aspect-ratio: 16/9; */
+        /* margin-top: 95%; */
+
+    }
+}
+
+
+.carousel-button{
+    position: absolute;
+    z-index: 2;
+    background: none;
+    border: none;
+    font-size: 4rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #fff;
+    cursor: pointer;
+    border-radius: .25rem;
+    padding: 0 .5rem;
+    background-color: rgba(0, 0, 0, .1);
+}
+.carousel-button:hover,
+.carousel-button:focus{
+    color: white;
+    background-color: rgba(0, 0, 0, .2) ;
+}
+.carousel-button:focus{
+    outline: 1px solid black;
+}
+.carousel-button.prev{
+    left: 2.5rem;
+}
+.carousel-button.next{
+    right: 2.5rem;
+}
+
+/* .slide[active] {
+    opacity: 1;
+} */
+.slide.active {
+    opacity: 1;
+}
+/* .img.active{
+    display: block;
+    animation: fade 0.8;
+} */
+@keyframes fade{
+    from{
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+
+/* Form part */
+.hero{
+    width: 100%;
+    height: 100vh;
+    background-image: linear-gradient(rgba(0,0,0,0.7), #3551b5), url(./img-8.jpg);
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.registration{
+    color: #fff;
+    text-align: center;
+    margin-bottom: 20px;
+}
+form{
+    width: 90%;
+    max-width: 600px;
+}
+.inputname{
+    margin-bottom: 25px;
+    position: relative;
+}
+input, #message{
+   width: 100%;
+   padding: 10px;
+   outline: 0;
+   border: 1px solid #fff;
+   color: #fff;
+   background: transparent;
+   font-size: 15px;
+}
+label{
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    padding: 10px;
+    color: #fff;
+    cursor: text;
+    transition: 0.2s;
+}
+.formbtn{
+    padding: 10px 0;
+    color: #fff;
+    width: 100%;
+    background: transparent;
+}
+input:focus~label,
+input:valid~label,
+#message:focus~label,
+#message:valid~label{
+    top: -35px;
+    font-size: 14px;
+}
